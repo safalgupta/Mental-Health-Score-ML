@@ -1,42 +1,48 @@
 /* =========================================================
-   TOKENS
+   TOKENS  (light mode defaults)
    ========================================================= */
 :root {
-  --ink:        #182420;
-  --ink-soft:   #4A5850;
-  --paper:      #EEF2EE;
-  --paper-deep: #E2E8E1;
-  --surface:    #FFFFFF;
-  --line:       #D6DED5;
+  --ink: #182420;
+  --ink-soft: #4a5850;
+  --paper: #eef2ee;
+  --paper-deep: #e2e8e1;
+  --surface: #ffffff;
+  --line: #d6ded5;
 
-  --pine:       #21594A;
-  --pine-deep:  #163D33;
-  --pine-tint:  #E4EFE9;
+  --pine: #21594a;
+  --pine-deep: #163d33;
+  --pine-tint: #e4efe9;
 
-  --amber:      #E3B341;
-  --coral:      #D9534F;
-  --sage:       #4C9A78;
+  --amber: #e3b341;
+  --coral: #d9534f;
+  --sage: #4c9a78;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body:    'Inter', -apple-system, sans-serif;
-  --font-mono:    'JetBrains Mono', 'SFMono-Regular', monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
 
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
 
-  --shadow-card: 0 1px 2px rgba(24,36,32,0.04), 0 12px 28px -8px rgba(24,36,32,0.10);
-  --shadow-lift: 0 2px 4px rgba(24,36,32,0.06), 0 20px 40px -12px rgba(22,61,51,0.20);
+  --shadow-card:
+    0 1px 2px rgba(24, 36, 32, 0.04), 0 12px 28px -8px rgba(24, 36, 32, 0.1);
+  --shadow-lift:
+    0 2px 4px rgba(24, 36, 32, 0.06), 0 20px 40px -12px rgba(22, 61, 51, 0.2);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { -webkit-font-smoothing: antialiased; }
+html {
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 600px at 85% -10%, #F4F8F3 0%, transparent 55%),
+    radial-gradient(1200px 600px at 85% -10%, #f4f8f3 0%, transparent 55%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -125,7 +131,9 @@ body {
   box-shadow: var(--shadow-card);
 }
 
-.form-panel { padding: 8px 32px 32px; }
+.form-panel {
+  padding: 8px 32px 32px;
+}
 
 .result-panel {
   position: sticky;
@@ -135,7 +143,7 @@ body {
   border: none;
   box-shadow: var(--shadow-lift);
   display: flex;
-  color: #EAF3EE;
+  color: #eaf3ee;
 }
 
 /* =========================================================
@@ -147,7 +155,10 @@ fieldset.group {
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
 }
-fieldset.group:last-of-type { border-bottom: none; padding-bottom: 8px; }
+fieldset.group:last-of-type {
+  border-bottom: none;
+  padding-bottom: 8px;
+}
 
 legend {
   font-family: var(--font-body);
@@ -179,11 +190,22 @@ legend {
   display: grid;
   gap: 18px;
 }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-.field { display: flex; flex-direction: column; gap: 6px; position: relative; }
-.field-span { grid-column: 1 / -1; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+.field-span {
+  grid-column: 1 / -1;
+}
 
 label {
   font-size: 13px;
@@ -202,7 +224,10 @@ select {
   border-radius: var(--radius-sm);
   padding: 11px 12px;
   width: 100%;
-  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
   appearance: none;
 }
 
@@ -214,9 +239,13 @@ select {
   cursor: pointer;
 }
 
-input:hover, select:hover { border-color: #B9C6B7; }
+input:hover,
+select:hover {
+  border-color: #b9c6b7;
+}
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: var(--pine);
   background: var(--surface);
@@ -230,11 +259,15 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .field.field-error input,
 .field.field-error select {
   border-color: var(--coral);
-  background: #FBEEEE;
+  background: #fbeeee;
 }
 
-.unit-input { position: relative; }
-.unit-input input { padding-right: 44px; }
+.unit-input {
+  position: relative;
+}
+.unit-input input {
+  padding-right: 44px;
+}
 .unit-input .unit {
   position: absolute;
   right: 12px;
@@ -248,7 +281,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 
 .hint {
   font-size: 11.5px;
-  color: #90A096;
+  color: #90a096;
 }
 
 .error-msg {
@@ -257,7 +290,9 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   min-height: 0;
   display: none;
 }
-.field.field-error .error-msg { display: block; }
+.field.field-error .error-msg {
+  display: block;
+}
 
 /* segmented control for stress level */
 .segmented {
@@ -278,14 +313,23 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.seg-btn:hover { border-color: #B9C6B7; color: var(--ink); }
+.seg-btn:hover {
+  border-color: #b9c6b7;
+  color: var(--ink);
+}
 .seg-btn.active {
   background: var(--pine);
   border-color: var(--pine);
   color: #fff;
 }
-.seg-btn[data-value="Very High"].active { background: var(--coral); border-color: var(--coral); }
-.seg-btn[data-value="High"].active { background: #C97C3B; border-color: #C97C3B; }
+.seg-btn[data-value="Very High"].active {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+.seg-btn[data-value="High"].active {
+  background: #c97c3b;
+  border-color: #c97c3b;
+}
 
 /* footer / submit */
 .form-footer {
@@ -299,7 +343,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .api-note {
   font-family: var(--font-mono);
   font-size: 11.5px;
-  color: #90A096;
+  color: #90a096;
   margin: 0;
 }
 .api-note code {
@@ -322,26 +366,43 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
   white-space: nowrap;
 }
-.submit-btn:hover { background: var(--pine-deep); }
-.submit-btn:active { transform: scale(0.98); }
-.submit-btn:disabled { opacity: 0.75; cursor: progress; }
+.submit-btn:hover {
+  background: var(--pine-deep);
+}
+.submit-btn:active {
+  transform: scale(0.98);
+}
+.submit-btn:disabled {
+  opacity: 0.75;
+  cursor: progress;
+}
 
 .btn-spinner {
   display: none;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.35);
+  border: 2px solid rgba(255, 255, 255, 0.35);
   border-top-color: #fff;
   animation: spin 0.7s linear infinite;
 }
-.submit-btn.loading .btn-label { opacity: 0.85; }
-.submit-btn.loading .btn-spinner { display: inline-block; }
+.submit-btn.loading .btn-label {
+  opacity: 0.85;
+}
+.submit-btn.loading .btn-spinner {
+  display: inline-block;
+}
 
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* =========================================================
    RESULT PANEL
@@ -356,13 +417,23 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   gap: 6px;
 }
 
-.state { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* gauge */
-.gauge { width: 100%; max-width: 260px; overflow: visible; margin-bottom: 8px; }
+.gauge {
+  width: 100%;
+  max-width: 260px;
+  overflow: visible;
+  margin-bottom: 8px;
+}
 .gauge-track {
   fill: none;
-  stroke: rgba(255,255,255,0.14);
+  stroke: rgba(255, 255, 255, 0.14);
   stroke-width: 14;
   stroke-linecap: round;
 }
@@ -375,45 +446,62 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   stroke-dashoffset: 314;
   transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.gauge-needle-hub { fill: #fff; opacity: 0.9; }
-.gauge-ticks line { stroke: rgba(255,255,255,0.3); stroke-width: 1.5; }
+.gauge-needle-hub {
+  fill: #fff;
+  opacity: 0.9;
+}
+.gauge-ticks line {
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 1.5;
+}
 
 .idle-label {
   font-family: var(--font-display);
   font-size: 20px;
   font-style: italic;
-  color: #EAF3EE;
+  color: #eaf3ee;
   margin: 8px 0 4px;
 }
 .idle-copy {
   font-size: 13.5px;
-  color: rgba(234,243,238,0.65);
+  color: rgba(234, 243, 238, 0.65);
   max-width: 230px;
   margin: 0;
 }
 
 /* loading */
-.state-loading { padding: 40px 0; }
+.state-loading {
+  padding: 40px 0;
+}
 .pulse-ring {
   width: 84px;
   height: 84px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   position: relative;
   margin-bottom: 22px;
 }
-.pulse-ring::before, .pulse-ring::after {
+.pulse-ring::before,
+.pulse-ring::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid rgba(234,243,238,0.55);
+  border: 2px solid rgba(234, 243, 238, 0.55);
   animation: pulse-out 1.8s ease-out infinite;
 }
-.pulse-ring::after { animation-delay: 0.6s; }
+.pulse-ring::after {
+  animation-delay: 0.6s;
+}
 @keyframes pulse-out {
-  0% { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(1.9); opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
 }
 .loading-label {
   font-family: var(--font-display);
@@ -421,7 +509,11 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   font-size: 19px;
   margin: 0 0 4px;
 }
-.loading-copy { font-size: 13px; color: rgba(234,243,238,0.6); margin: 0; }
+.loading-copy {
+  font-size: 13px;
+  color: rgba(234, 243, 238, 0.6);
+  margin: 0;
+}
 
 /* result */
 .score-readout {
@@ -437,7 +529,11 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   color: #fff;
   letter-spacing: -0.02em;
 }
-.score-max { font-family: var(--font-mono); font-size: 16px; color: rgba(234,243,238,0.55); }
+.score-max {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: rgba(234, 243, 238, 0.55);
+}
 
 .score-band {
   font-family: var(--font-display);
@@ -447,7 +543,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 .score-context {
   font-size: 13px;
-  color: rgba(234,243,238,0.7);
+  color: rgba(234, 243, 238, 0.7);
   max-width: 250px;
   margin: 0 0 22px;
 }
@@ -462,20 +558,28 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   border-radius: var(--radius-sm);
   padding: 11px 22px;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.15s ease;
 }
-.reset-btn:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
-.reset-btn:active { transform: scale(0.98); }
+.reset-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+.reset-btn:active {
+  transform: scale(0.98);
+}
 
 /* error state */
-.state-error { padding: 28px 0; }
+.state-error {
+  padding: 28px 0;
+}
 .error-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(217,83,79,0.18);
-  color: #FF9B95;
-  border: 1.5px solid rgba(255,155,149,0.4);
+  background: rgba(217, 83, 79, 0.18);
+  color: #ff9b95;
+  border: 1.5px solid rgba(255, 155, 149, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,7 +596,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 .error-copy {
   font-size: 13px;
-  color: rgba(234,243,238,0.7);
+  color: rgba(234, 243, 238, 0.7);
   max-width: 250px;
   margin: 0 0 22px;
 }
@@ -509,7 +613,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 .site-footer p {
   font-size: 12.5px;
-  color: #90A096;
+  color: #90a096;
   text-align: center;
   margin: 0;
 }
@@ -518,22 +622,246 @@ input:invalid:not(:placeholder-shown):not(:focus) {
    RESPONSIVE
    ========================================================= */
 @media (max-width: 920px) {
-  .layout { grid-template-columns: 1fr; }
-  .result-panel { position: static; min-height: 420px; }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .result-panel {
+    position: static;
+    min-height: 420px;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 560px) {
-  .site-header { padding: 44px 16px 24px; }
-  .layout { padding: 0 16px 32px; gap: 16px; }
-  .form-panel { padding: 4px 20px 24px; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .segmented { grid-template-columns: repeat(2, 1fr); }
-  .form-footer { flex-direction: column; align-items: stretch; gap: 14px; }
-  .submit-btn { justify-content: center; }
-  .api-note { text-align: center; }
+  .site-header {
+    padding: 44px 16px 24px;
+  }
+  .layout {
+    padding: 0 16px 32px;
+    gap: 16px;
+  }
+  .form-panel {
+    padding: 4px 20px 24px;
+  }
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .segmented {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .submit-btn {
+    justify-content: center;
+  }
+  .api-note {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* =========================================================
+   THEME TOGGLE BUTTON
+   =========================================================
+   Fixed at the top-right corner, above all content (z-index 200).
+   Uses CSS custom properties so it automatically re-skins when the
+   [data-theme] attribute flips on <html>.
+   ========================================================= */
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  /* Own transition so it animates independently of .theme-transitioning */
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    background 0.25s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--pine);
+  color: var(--pine);
+  box-shadow: 0 4px 16px rgba(33, 89, 74, 0.15);
+  transform: scale(1.07);
+}
+
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+
+/*
+  Icon visibility rules:
+  — In light mode: hide the sun, show the moon (clicking → dark)
+  — In dark mode:  hide the moon, show the sun (clicking → light)
+*/
+[data-theme="light"] .icon-sun {
+  display: none;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+/* =========================================================
+   SMOOTH THEME TRANSITION UTILITY
+   =========================================================
+   Added to <html> for ~350 ms when the toggle fires, then removed.
+   Overrides any shorter transitions so the colour change feels
+   deliberate rather than jarring.
+   ========================================================= */
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition:
+    background-color 0.28s ease,
+    background 0.28s ease,
+    color 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease !important;
+}
+
+/* =========================================================
+   DARK THEME TOKENS
+   =========================================================
+   Strategy:
+   • Canvas flips from pale paper (#EEF2EE) to deep forest midnight (#0D1811).
+   • Pine stays the conceptual anchor; values shift UP (lighter) so they remain
+     legible on the dark surface — analogous to how watercolour pigments look
+     lighter on dark paper.
+   • The result panel (already a dark pine gradient) is pinned with explicit hex
+     values so it doesn't brighten with the rest of the --pine vars.
+   • Shadows deepen; they're invisible on a bright page but structural on dark.
+   ========================================================= */
+[data-theme="dark"] {
+  --ink: #c6ddd2; /* soft celadon-white — readable, not glaring       */
+  --ink-soft: #6a9080; /* muted sage for secondary text / labels            */
+  --paper: #0d1811; /* deep forest midnight — the main canvas            */
+  --paper-deep: #090f0c; /* slightly deeper, used for code chips / bg accents */
+  --surface: #121e18; /* card / panel surface — one step above paper       */
+  --line: #1e3028; /* subtle borders, dividers                          */
+
+  /* Pine lifts so it's visible as an accent on dark backgrounds.
+     Note: .result-panel locks its own gradient below so it stays dark. */
+  --pine: #4c9a78; /* sage-level — used for eyebrow, focus rings, etc.  */
+  --pine-deep: #3a7d62; /* hover state for buttons that use pine-deep        */
+  --pine-tint: #162a1e; /* very dark green tint — badge backgrounds, focus   */
+
+  --amber: #e3b341; /* unchanged — warm accent reads well on dark        */
+  --coral: #e07570; /* slightly lighter so error states stay vivid       */
+  --sage: #5ebf90; /* unchanged                                         */
+
+  --shadow-card:
+    0 1px 3px rgba(0, 0, 0, 0.35), 0 12px 28px -8px rgba(0, 0, 0, 0.5);
+  --shadow-lift:
+    0 2px 6px rgba(0, 0, 0, 0.45), 0 20px 40px -12px rgba(0, 0, 0, 0.65);
+}
+
+/* ── Body background ─────────────────────────────────────── */
+[data-theme="dark"] body {
+  /* Same radial-gradient shape as light mode; tint shifts to deep forest */
+  background:
+    radial-gradient(1200px 600px at 85% -10%, #182b1f 0%, transparent 55%),
+    var(--paper);
+}
+
+/* ── Page title ──────────────────────────────────────────── */
+/*
+  In light mode .title uses --pine-deep (#163D33), which is too dark for the
+  midnight canvas. Promote it to --ink (the lighter token) in dark mode.
+  The <em> inherits the updated --pine automatically, staying italic + tinted.
+*/
+[data-theme="dark"] .title {
+  color: var(--ink);
+}
+
+/* ── Result panel gradient ───────────────────────────────── */
+/*
+  This is the one component we hard-code rather than derive from variables,
+  because --pine-deep and --pine both became lighter in dark mode (so the
+  gradient would look washed out). Instead we anchor it to the original deep
+  forest values and darken the shadow end slightly.
+
+  Think of it like the result panel being a "room with its own lighting" —
+  it has its own ambient darkness independent of the page's theme.
+*/
+[data-theme="dark"] .result-panel {
+  background: linear-gradient(165deg, #0e2620 0%, #163d33 100%);
+}
+
+/* ── Select dropdown chevron ─────────────────────────────── */
+/*
+  The SVG chevron is embedded as a data-URI with a hardcoded stroke colour
+  matching --ink-soft in light mode (#4A5850). In dark mode that dark stroke
+  is invisible. We swap to the dark-mode --ink-soft value (#6A9080 → %236A9080).
+*/
+[data-theme="dark"] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%236A9080' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ── Input / select hover border ────────────────────────────
+   Light mode uses a hardcoded #B9C6B7 (medium green-grey).
+   On a dark canvas that's too bright and harsh; dial it back.       */
+[data-theme="dark"] input:hover,
+[data-theme="dark"] select:hover {
+  border-color: #2d4a3b;
+}
+
+/* ── Segmented control hover ─────────────────────────────── */
+[data-theme="dark"] .seg-btn:hover {
+  border-color: var(--pine-deep);
+  color: var(--ink);
+}
+
+/* ── Error field background ──────────────────────────────── */
+/*
+  Light mode uses a hardcoded light-pink (#FBEEEE).
+  On a dark surface that flash of bright pink is jarring.
+  Replace with a very dark, barely-saturated red.
+*/
+[data-theme="dark"] .field.field-error input,
+[data-theme="dark"] .field.field-error select {
+  background: #241414;
+  border-color: var(--coral);
+}
+
+/* ── Input placeholder contrast ─────────────────────────── */
+[data-theme="dark"] input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.65;
+}
+
+/* ── Noise overlay: slightly more visible on dark ─────────── */
+[data-theme="dark"] .noise-overlay {
+  opacity: 0.045;
+}
+
+/* ── Theme toggle: dark-mode-specific hover glow ─────────── */
+[data-theme="dark"] .theme-toggle:hover {
+  box-shadow: 0 4px 18px rgba(76, 154, 120, 0.28);
 }
